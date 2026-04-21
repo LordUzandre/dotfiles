@@ -14,6 +14,12 @@ let &t_EI = "\e[2 q"
 set updatetime=5000
 autocmd CursorHoldI * stopinsert
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin()
 " The main LSP client
 Plug 'prabirshrestha/vim-lsp'
