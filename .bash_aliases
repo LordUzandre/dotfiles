@@ -2,6 +2,8 @@
 alias baba='source ~/.bashrc'
 alias bashrc='vim ~/.zshrc'
 alias c='clear'
+alias ..='cd ../'
+alias ...='cd ../../'
 
 # Getlab (UPP)
 alias getlab='~/dev/upp/getlab-cli/staff_cli.py'
@@ -28,3 +30,4 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 #TDDD12
 alias mysql12='echo PLF2kfNdPp | xclip -selection clipboard'
+alias ilock='i3lock -c 000000'
