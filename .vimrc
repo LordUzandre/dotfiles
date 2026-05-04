@@ -26,4 +26,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
 
-
+nnoremap vv ^vg_
+nnoremap 0 ^
+nnoremap ^ 0

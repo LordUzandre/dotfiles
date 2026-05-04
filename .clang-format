@@ -2,3 +2,6 @@ BasedOnStyle: Google
 BreakBeforeBraces: Attach
 ColumnLimit: 80
 IndentWidth: 4
+PointerAlignment: Left
+QualifierAlignment: Custom
+QualifierOrder: ['type', 'const', 'volatile']
