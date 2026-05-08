@@ -29,3 +29,19 @@ call plug#end()
 nnoremap vv ^vg_
 nnoremap 0 ^
 nnoremap ^ 0
+nnoremap gg g0
+nnoremap G G$
+
+" normal mode (covers all operations)
+nnoremap d "_d
+" Visual mode
+vnoremap d "_d
+nnoremap D "_D
+" optional
+nnoremap x "_x
+
+" Normal mode (covers all operations)
+nnoremap y "+y
+" Visual mode
+vnoremap y "+y
+nnoremap Y "+Y
