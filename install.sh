@@ -7,6 +7,7 @@ FILES=(
   ".aerospace.toml"
   ".bash_aliases"
   "clang-format"
+  ".p10k.zsh"
   "tmux.conf"
   ".vimrc"
   ".zshrc"
