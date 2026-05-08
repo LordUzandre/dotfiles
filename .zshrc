@@ -79,7 +79,9 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+if [[ -f "$ZSH/oh-my-zsh.sh" ]]; then
+  source "$ZSH/oh-my-zsh.sh"
+else
 
 # User configuration
 
@@ -113,40 +115,16 @@ source $ZSH/oh-my-zsh.sh
 # vim-bindings in zsh
 bindkey -v
 
-alias baba='source ~/.zshrc'
-alias zsh='vim ~/.zshrc'
-alias zshrc='vim ~/.zshrc'
-alias c='clear'
-alias getlab='~/dev/upp/getlab-cli/staff_cli.py'
-alias ven='source ~/dev/upp/getlab-cli/venv/bin/activate'
-# alias config='cd ~/.config/nvim/lua/config/'
-alias a='./a.out'
-
-# LiU-render
-alias w++17='g++ -std=c++17 -Wall -Wextra -Wpedantic'                                   
-alias wl++17='clang++ -std=c++17 -Wall -Wextra -Wpedantic'                              
-alias c++17='g++ -std=c++17 -Wall -Wextra -Wpedantic -Weffc++'                          
-alias cl++17='clang++ -std=c++17 -Wall -Wextra -Wpedantic -Weffc++'                     
-                                                                                        
-# C++20 aliases                                                                         
-alias w++20='g++ -std=c++20 -Wall -Wextra -Wpedantic'                                   
-alias wl++20='clang++ -std=c++20 -Wall -Wextra -Wpedantic'                              
-alias c++20='g++ -std=c++20 -Wall -Wextra -Wpedantic -Weffc++'                          
-alias cl++20='g++ -std=c++20 -Wall -Wextra -Wpedantic -Weffc++'  
-
-# TDIU16
-alias g++99='gcc -m32 -Wall -Wextra -std=c99 -pedantic -g'
-
-# .dot-files config
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
 # spratt
 # cd() { echo "cd: no such file or directory: $1" }
 # spratt avaktiveras med "unset -f cd"
 
 # Powelevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ -f /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme ]]; then
+	source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+elif [[ ! -f ~/.p10k.zsh ]]
+	source ~/.p10k.zsh
+fi
 
 # . "$HOME/.local/bin/env"

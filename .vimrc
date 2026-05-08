@@ -1,9 +1,25 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'sickill/vim-monokai'
+" Kärnan för LSP (lättviktig)
+Plug 'prabirshrestha/vim-lsp'
+" Gör det superenkelt att installera LSP-servrar (t.ex. :LspInstallServer clangd)
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+call plug#end()
+
 set number
 set relativenumber
 
 syntax enable
 set termguicolors
-colorscheme monokai
+silent! colorscheme monokai
 
 "" Cursor: bar in insert mode
 let &t_SI = "\e[6 q"
@@ -13,18 +29,6 @@ let &t_EI = "\e[2 q"
 "" Leave insert mode after 5s inactivity
 set updatetime=5000
 autocmd CursorHoldI * stopinsert
-
-call plug#begin()
-" The main LSP client
-Plug 'prabirshrestha/vim-lsp'
-" clangd
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Auto-configuration and installer for LSP servers
-" Plug 'mattn/vim-lsp-settings'
-" (Optional) Autocompletion support
-" Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
-call plug#end()
 
 nnoremap vv ^vg_
 nnoremap 0 ^
