@@ -127,4 +127,8 @@ elif [[ ! -f ~/.p10k.zsh ]]
 	source ~/.p10k.zsh
 fi
 
+if [[ -f ~/.bash_aliases ]]; then
+  source ~/.bash_aliases
+fi
+
 # . "$HOME/.local/bin/env"
