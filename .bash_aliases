@@ -31,8 +31,11 @@ alias cl++20='g++ -std=c++20 -Wall -Wextra -Wpedantic -Weffc++'
 
 # TDIU16
 alias g++99='gcc -m32 -Wall -Wextra -std=c99 -pedantic -g'
+export PATH=$PATH:/home/joaen/dev/tdiu16/src/utils
 
 #TDDD12
 alias mysql12='echo PLF2kfNdPp | xclip -selection clipboard'
 
 # ---
+# Switch monitor layout on schools computers
+# swaymsg output DP-1 pos 0 0

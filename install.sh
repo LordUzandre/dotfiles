@@ -30,6 +30,7 @@ FILES=(
   ".zshrc"
   ".config/nvim/lua/plugins/colorscheme.lua"
   ".config/nvim/lua/plugins/themes_list.lua"
+  ".config/sway/config"
 )
 
 # ==============================================================================
@@ -39,7 +40,7 @@ for file in "${FILES[@]}"; do
   SOURCE="$DOTFILES_DIR/$file"
 
   if [ ! -e "$SOURCE" ]; then
-    echo -e "${RED}ERROR: Unable to find file ${RED}$SOURCE${RESET} in the repo! Skipping it."
+    echo -e "${RED}ERROR:${RESET} Unable to find file ${RED}$SOURCE${RESET} in the repo! Skipping it."
     continue
   fi
 
