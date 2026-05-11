@@ -16,20 +16,20 @@ BOLD='\033[1m'
 # ==============================================================================
 
 DOTFILES_DIR="$HOME/dotfiles"
-BACKUP_DIR="$HOME/dotfiles/dotfiles_backup_$(date +%Y%m%d%_%H%M%S)"
+BACKUP_DIR="$HOME/dotfiles/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 
 # ==============================================================================
 
 FILES=(
   ".aerospace.toml"
   ".bash_aliases"
-  "clang-format"
+  ".clang-format"
   ".p10k.zsh"
-  "tmux.conf"
+  ".tmux.conf"
   ".vimrc"
   ".zshrc"
-  ".config/nvim/plugins/colorscheme.lua"
-  ".config/nvim/plugins/themes_list.lua"
+  ".config/nvim/lua/plugins/colorscheme.lua"
+  ".config/nvim/lua/plugins/themes_list.lua"
 )
 
 # ==============================================================================
@@ -39,25 +39,32 @@ for file in "${FILES[@]}"; do
   SOURCE="$DOTFILES_DIR/$file"
 
   if [ ! -e "$SOURCE" ]; then
-    echo -e "${RED}$SOURCE ${RESET}is not on the list in ! Skipping it."
+    echo -e "${RED}ERROR: Unable to find file ${RED}$SOURCE${RESET} in the repo! Skipping it."
     continue
+  fi
+
+  TARGET_DIR=$(dirname "$TARGET")
+  if [ ! -d "$TARGET_DIR" ]; then
+    echo -e "📁 Skapar katalog: $TARGET_DIR${RESET}"
+    mkdir -p "$TARGET_DIR"
   fi
 
   if [ -e "$TARGET" ] || [ -L "$TARGET" ]; then
     if [ -L "$TARGET" ] && [ "$(readlink "$TARGET")" = "$SOURCE" ]; then
       echo -e "${GREEN}$file ${RESET}is already correctly linked."
+      continue
     fi
 
     # if file exists but is not our symlink, create backup
-    # if [ ! -d "$BACKUP_DIR" ]; then
-    #   mkdir -p "$BACKUP_DIR"
-    # fi
+    if [ ! -d "$BACKUP_DIR" ]; then
+      mkdir -p "$BACKUP_DIR"
+    fi
 
     # Create eventual underlying folders in backup
-    # mkdir -p "$BACKUP_DIR/$(dirname "$file")"
+    mkdir -p "$BACKUP_DIR/$(dirname "$file")"
 
     echo -e " backing up existing ${YELLOW}$file ${RESET}to $BACKUP_DIR/$file"
-    # mv "$TARGET" "$BACKUP_DIR/$file"
+    mv "$TARGET" "$BACKUP_DIR/$file"
   fi
 
   # CREATE THE SYMBOLIC LINK
