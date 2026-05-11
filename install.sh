@@ -30,6 +30,7 @@ FILES=(
   ".zshrc"
   ".config/nvim/lua/plugins/colorscheme.lua"
   ".config/nvim/lua/plugins/themes_list.lua"
+  ".config/nvim/lua/config/keymaps.lua"
   ".config/sway/config"
 )
 

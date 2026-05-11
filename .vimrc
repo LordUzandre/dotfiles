@@ -33,7 +33,7 @@ autocmd CursorHoldI * stopinsert
 nnoremap vv ^vg_
 nnoremap 0 ^
 nnoremap ^ 0
-nnoremap gg g0
+nnoremap gg gg0
 nnoremap G G$
 
 " normal mode (covers all operations)
