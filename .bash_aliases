@@ -1,4 +1,7 @@
 # Universal aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 alias baba='source ~/.bashrc'
 alias bashrc='vim ~/.zshrc'
 alias c='clear'
