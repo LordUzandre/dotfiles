@@ -7,6 +7,7 @@ alias bashrc='vim ~/.zshrc'
 alias c='clear'
 alias ..='cd ../'
 alias ...='cd ../../'
+alias fire='firefox & disown'
 
 # .dot-files config
 # alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
