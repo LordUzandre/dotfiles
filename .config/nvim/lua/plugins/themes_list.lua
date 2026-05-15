@@ -54,12 +54,11 @@ return {
   },
   {
     "polirritmico/monokai-nightasty.nvim",
-    lazy = false, -- Teman ska laddas direkt vid start
-    priority = 1000, -- Hög prioritet så det laddas innan andra UI-element
+    lazy = false, --  Theme sould load on startup
+    priority = 1000, --  Load before other UI-elements
     opts = {
-      dark_style_background = "default", -- 'default', 'dark', eller 'transparent'
+      dark_style_background = "default", -- 'default', 'dark', or 'transparent'
       light_style_background = "default",
-      -- Här kan du lägga till fler specifika inställningar för just detta tema
     },
   },
 }
