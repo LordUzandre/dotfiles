@@ -1,9 +1,12 @@
 # Universal aliases
 alias baba='source ~/.bashrc'
-alias bashrc='vim ~/.zshrc'
+alias bashrc='vim ~/.bashrc'
+alias zshrc='vim ~/.zshrc'
 alias c='clear'
 alias ..='cd ../'
 alias ...='cd ../../'
+
+alias lz='lazygit'
 
 # .dot-files config
 # alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

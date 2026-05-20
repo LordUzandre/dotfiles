@@ -75,3 +75,35 @@ for file in "${FILES[@]}"; do
 done
 
 # ==============================================================================
+# Add call to bash_aliases in bash/zshrc
+# ==============================================================================
+
+# Fetch name for current shell
+CURRENT_SHELL=$(basename "$SHELL")
+RC_FILE=""
+
+if [ "$CURRENT_SHELL" = "zsh" ]; then
+  RC_FILE="$HOME/.zshrc"
+elif [ "$CURRENT_SHELL" = "bash" ]; then
+  RC_FILE="$HOME/.bashrc"
+fi
+
+if [ -n "$RC_FILE" ] && [ -e "$RC_FILE" ]; then
+  # Add check if call to alias exists in rc_file
+  if ! grep -q "source ~/.bash_aliases" "$RC_FILE"; then
+    echo -e "Adding alias-check to ${YELLOW}$RC_FILE${RESET}"
+    cat <<'EOF' >>"$RC_FILE"
+
+# Ladda in alias
+if [[ -f ~/.bash_aliases ]]; then
+  source ~/.bash_aliases
+fi
+EOF
+  else
+    echo -e "${GREEN}✔️[OK]${RESET}$CURRENT_SHELL shell already load aliases."
+  fi
+else
+  echo -e "${YELLOW}Unable to add call for alises. ${RESET}Uses other shell than bash or zsh. ($CURRENT_SHELL).${RESET}"
+fi
+
+# ==============================================================================
