@@ -1,10 +1,14 @@
 # Universal aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 alias baba='source ~/.bashrc'
 alias bashrc='vim ~/.bashrc'
 alias zshrc='vim ~/.zshrc'
 alias c='clear'
 alias ..='cd ../'
 alias ...='cd ../../'
+alias fire='firefox & disown'
 
 alias lz='lazygit'
 
