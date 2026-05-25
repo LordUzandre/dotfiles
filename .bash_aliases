@@ -3,6 +3,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias baba='source ~/.bashrc'
+alias zaza='source ~/.zshrc'
 alias bashrc='vim ~/.bashrc'
 alias zshrc='vim ~/.zshrc'
 alias c='clear'
@@ -23,6 +24,7 @@ alias ilock='i3lock -c 000000'
 alias getlab='~/dev/upp/getlab-cli/staff_cli.py'
 alias ven='source ~/dev/upp/getlab-cli/venv/bin/activate'
 alias a='./a.out'
+alias openvpn='sudo openfortivpn remote.edu.liu.se --saml-login'
 
 # C++17-compile
 alias w++17='g++ -std=c++17 -Wall -Wextra -Wpedantic'
@@ -41,7 +43,7 @@ alias g++99='gcc -m32 -Wall -Wextra -std=c99 -pedantic -g'
 export PATH=$PATH:/home/joaen/dev/tdiu16/src/utils
 
 #TDDD12
-alias mysql12='echo PLF2kfNdPp | xclip -selection clipboard'
+alias my12='echo PLF2kfNdPp | xclip -selection clipboard | mysql -h mariadb.edu.liu.se -u joaen574 -p joaen574'
 
 # ---
 # Switch monitor layout on schools computers
