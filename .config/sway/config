@@ -160,10 +160,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+input "type:keyboard" {
+    xkb_layout "us,se"
+    xkb_options "grp:win_space_toggle"
+}
+
 # Set 10px spacing between windows
-gaps inner 8
+# gaps inner 8
 # Set an additional 5px spacing at the screen edges
-gaps outer 0
+# gaps outer 0
 # Disable gaps if there is only one window
 smart_gaps on
 
