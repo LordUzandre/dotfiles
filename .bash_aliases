@@ -12,6 +12,7 @@ alias ...='cd ../../'
 alias fire='firefox & disown'
 
 alias lz='lazygit'
+alias nv='nvim'
 
 # .dot-files config
 # alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -46,5 +47,11 @@ export PATH=$PATH:/home/joaen/dev/tdiu16/src/utils
 alias my12='echo PLF2kfNdPp | xclip -selection clipboard | mysql -h mariadb.edu.liu.se -u joaen574 -p joaen574'
 
 # ---
-# Switch monitor layout on schools computers
+# Switch monitor layout on LiU computers
+# xrandr output DP-1 pos 0 0
+
+# Switch monitor layout on Linux HDD
 # swaymsg output DP-1 pos 0 0
+
+# Connect to LiU with openFortiVPN
+# sudo openfortivpn remote.edu.liu.se --saml-login
