@@ -12,6 +12,7 @@ alias ...='cd ../../'
 alias fire='firefox & disown'
 
 alias lz='lazygit'
+alias nv='nvim'
 
 # .dot-files config
 # alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -49,5 +50,11 @@ alias score='cp ~/Downloads/TDDI82_2026-06-01/given_files/scores.txt .'
 alias tournament='cp ~/Downloads/TDDI82_2026-06-01/given_files/tournament.txt .'
 
 # ---
-# Switch monitor layout on schools computers
+# Switch monitor layout on LiU computers
+# xrandr output DP-1 pos 0 0
+
+# Switch monitor layout on Linux HDD
 # swaymsg output DP-1 pos 0 0
+
+# Connect to LiU with openFortiVPN
+# sudo openfortivpn remote.edu.liu.se --saml-login

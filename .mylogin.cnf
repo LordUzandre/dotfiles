@@ -1,0 +1,11 @@
+# TDDD12: autmated login to MySQL-db on LiU 
+# (requires connection via VPN)
+
+# Will not work if files is readable by other users on the system
+# fix with 'chmod 600 ~/my.cnf'
+
+[liu]
+host=mariadb.edu.liu.se
+user=joaen574
+password=PLF2kfNdPp
+database=joaen574
