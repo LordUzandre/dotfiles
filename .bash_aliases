@@ -17,7 +17,9 @@ alias nv='nvim'
 # .dot-files config
 # alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-alias ilock='i3lock -c 000000'
+# i3lock in tiling mode
+# alias ilock='i3lock -c 000000'
+alias ilock='i3lock -i $HOME/dotfiles/img/bliss_nighttime_2k.png -t'
 
 # --- LIU-specific ---
 
@@ -41,13 +43,10 @@ alias cl++20='g++ -std=c++20 -Wall -Wextra -Wpedantic -Weffc++'
 
 # TDIU16
 alias g++99='gcc -m32 -Wall -Wextra -std=c99 -pedantic -g'
-export PATH=$PATH:/home/joaen/dev/tdiu16/src/utils
+export PATH=$PATH:$HOME/dev/tdiu16/src/utils
 
 #TDDD12
 alias my12='echo PLF2kfNdPp | xclip -selection clipboard | mysql -h mariadb.edu.liu.se -u joaen574 -p joaen574'
-
-alias score='cp ~/Downloads/TDDI82_2026-06-01/given_files/scores.txt .'
-alias tournament='cp ~/Downloads/TDDI82_2026-06-01/given_files/tournament.txt .'
 
 # ---
 # Switch monitor layout on LiU computers
