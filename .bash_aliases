@@ -45,6 +45,9 @@ export PATH=$PATH:/home/joaen/dev/tdiu16/src/utils
 #TDDD12
 alias my12='echo PLF2kfNdPp | xclip -selection clipboard | mysql -h mariadb.edu.liu.se -u joaen574 -p joaen574'
 
+alias score='cp ~/Downloads/TDDI82_2026-06-01/given_files/scores.txt .'
+alias tournament='cp ~/Downloads/TDDI82_2026-06-01/given_files/tournament.txt .'
+
 # ---
 # Switch monitor layout on schools computers
 # swaymsg output DP-1 pos 0 0
