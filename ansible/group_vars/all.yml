@@ -1,0 +1,16 @@
+# Make sure that all these are installed
+common packages:
+  - git
+  - curl
+  - vim
+  - neovim
+  - alacritty
+  - zsh
+  - tmux
+  - wget
+
+  # Packages uniquely named for distros
+distribution_packages:
+  Debian: []
+  FedoiwRedHata: []
+  Archlinux: []

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# ==============================================================================
+# -----
 # Colors
-# ==============================================================================
+# -----
 
 RESET='\033[0m'
 RED='\033[0;31m'
@@ -13,16 +13,18 @@ CYAN='\033[0;36m'
 MAGENTA='\033[0;35m'
 BOLD='\033[1m'
 
-# ==============================================================================
+# -----
 # DIRECTORIES
-# ==============================================================================
+# -----
 
-DOTFILES_DIR="$HOME/dotfiles"
+# Use the scripts location instead of $HOME/dotfiles
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTFILES_DIR="$SCRIPT_DIR"
 BACKUP_DIR="$HOME/dotfiles/dotfiles_backup_$(date +%Y%m%d_%H%M%S)"
 
-# ==============================================================================
+# -----
 # FILES
-# ==============================================================================
+# -----
 
 FILES=(
   ".aerospace.toml"
@@ -40,7 +42,7 @@ FILES=(
   ".config/sway/config"
 )
 
-# ==============================================================================
+# -----
 
 for file in "${FILES[@]}"; do
   TARGET="$HOME/$file"
@@ -80,9 +82,9 @@ for file in "${FILES[@]}"; do
   ln -s "$SOURCE" "$TARGET"
 done
 
-# ==============================================================================
+# -----
 # Add call to bash_aliases in bash/zshrc
-# ==============================================================================
+# -----
 
 # Fetch name for current shell
 CURRENT_SHELL=$(basename "$SHELL")
@@ -100,7 +102,7 @@ if [ -n "$RC_FILE" ] && [ -e "$RC_FILE" ]; then
     echo -e "Adding alias-check to ${YELLOW}$RC_FILE${RESET}"
     cat <<'EOF' >>"$RC_FILE"
 
-# Ladda in alias
+# Load in shared aliases
 if [[ -f ~/.bash_aliases ]]; then
   source ~/.bash_aliases
 fi

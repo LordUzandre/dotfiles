@@ -1,0 +1,5 @@
+# Configure the current computer
+all:
+  hosts:
+    localhost:
+      ansible_connection: local
