@@ -1,0 +1,42 @@
+- name: Configure Linux Workstation
+  hosts: localhost
+  # Unlock sudo-privledges
+  become: true
+  tasks:
+    - name: Install common packages
+      ansible.builtin.package:
+        name: "{{ common_package }}"
+        state: present
+
+    # -----
+    # Distro-specific installs (if needed)
+    # -----
+    - name: Install distribution-specific packages
+      ansible.builtin.package:
+        name: "{{ distribution_packages[ansible_facts.os_family] }}"
+        state: present
+      when: ansible_facts.os_family in distribution_packages
+
+    # -----
+  
+    - name: Install Oh-My-Zsh
+      ansible.builtin.git:
+        repo: https://github.com/ohmyzsh/ohmyzsh.git
+        dest: "{{ ansible_user_dir }}/.oh-my-zsh"
+        version: master
+        update: true
+      become: false
+
+
+    - name: Set Zsh as the default shell
+      ansible.builtin.user:
+        name: "{{ ansible_user_id }}"
+        shell: /usr/bin/zsh
+
+    # -----
+    # Dotfiles
+    # -----
+    - name: Run dotfiles install script
+      ansible.builtin.command:
+        cmd: "{{ ansible_user_dir }}/dotfiles/install.sh"
+      become: false
