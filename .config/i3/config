@@ -191,3 +191,7 @@ exec --no-startup-id $HOME/repos/feh/usr/bin/feh --bg_scale $HOME/dotfiles/img/b
 bar {
         status_command i3status
 }
+
+# Turn sleep mode off
+exec xset s off
+exec xset -dpms

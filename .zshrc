@@ -134,7 +134,6 @@ fi
 # . "$HOME/.local/bin/env"
 
 # Flutter
-export PATH="$HOME/flutter-sdk/bin:$PATH"
-export CHROME_EXECUTABLE="/usr/sbin/google-chrome-stable"
+export PATH="$HOME/dev/sdk/flutter/bin:$PATH"
 # run flutter app in chrome:
-# CHROME_EXECUTABLE="/usr/sbin/google-chrome-stable"
+export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
