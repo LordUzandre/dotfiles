@@ -36,6 +36,7 @@ FILES=(
   ".vimrc"
   ".zshrc"
   ".config/i3/config"
+  ".config/swaylock/config"
   ".config/nvim/lua/plugins/colorscheme.lua"
   ".config/nvim/lua/plugins/themes_list.lua"
   ".config/nvim/lua/config/keymaps.lua"
@@ -55,7 +56,7 @@ for file in "${FILES[@]}"; do
 
   TARGET_DIR=$(dirname "$TARGET")
   if [ ! -d "$TARGET_DIR" ]; then
-    echo -e "📁 Skapar katalog: $TARGET_DIR${RESET}"
+    echo -e "📁 Creating new directory: $TARGET_DIR${RESET}"
     mkdir -p "$TARGET_DIR"
   fi
 
