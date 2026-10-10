@@ -137,3 +137,5 @@ fi
 export PATH="$HOME/dev/sdk/flutter/bin:$PATH"
 # run flutter app in chrome:
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
+
+eval "$(zoxide init zsh)"

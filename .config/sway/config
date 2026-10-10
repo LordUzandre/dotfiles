@@ -81,7 +81,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
+# Commented out to avoid conflict with lang toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -164,12 +165,11 @@ bindsym $mod+r mode "resize"
 
 input "type:keyboard" {
     xkb_layout "us,se"
-    xkb_options "grp:win_space_toggle"
+    xkb_options caps:escape
+    # xkb_options "grp:win_space_toggle"
 }
 
-input * {
-    xkb_options caps:escape
-}
+bindsym Mod4+space input type:keyboard xkb_switch_layout next
 
 # Set 10px spacing between windows
 # gaps inner 8
