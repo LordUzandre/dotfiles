@@ -134,10 +134,26 @@ fi
 # . "$HOME/.local/bin/env"
 
 # Flutter
-export PATH="$HOME/dev/sdk/flutter/bin:$PATH"
+export PATH="$PATH:$HOME/dev/sdk/flutter/bin"
 # run flutter app in chrome:
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
-# ingore "c" in history
-export HISTIGNORE="c"
 
+# ingore some commands in terminal history
+zshaddhistory() {
+  local line=${1%%$'\n'}
+  [[ $line != (c|ls|clear|cd) ]]
+}
+
+# Takes care of lingering c and clear in the buffer history
+my-accept-line() {
+  if [[ $BUFFER == (c|clear) ]]; then
+    BUFFER=
+    zle clear-screen
+  else
+    zle .accept-line
+  fi
+}
+zle -N accept-line my-accept-line
+
+# Keep this at the bottom
 eval "$(zoxide init zsh)"
